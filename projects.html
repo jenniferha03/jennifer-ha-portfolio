@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src = "images/Jennifer-Ha-Logo.png" id="header-image" alt="Jennifer-Ha-Logo"> </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="about-me.html">ABOUT</a></li>
+        <li><a class="active" href="projects.html">PROJECTS</a></li>
+        <li><a href="photos.html">PHOTOS</a></li>
+        <li><a href="https://drive.google.com/file/d/1-15DFZwabMEXFwUkstILNsjiODs5Dd-9/view?usp=sharing" target="_blank">RESUME</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+    </svg>
+  </button>
+  <section id="cs-projects">
+    <h1>Computer Science Projects</h1>
+    
+		<div class="project">
+      <img src="images/patient-insight.jpeg" alt="LLM Patient Insight Tool">
+      <div class ="project-right"> 
+        <a href="https://github.com/jenniferha03/FPT-LLM-Insight-Repo" target="_blank"><h3>LLM-Powered Patient Insight Tool (FPT Software)</h3></a>
+        <p><strong>Tech Stack:</strong> Python, LangChain, OpenAI API, Vector DB, GitLab CI/CD</p>
+        <p>Led a 4-member team to architect a Retrieval-Augmented Generation (RAG) pipeline to summarize open-text patient feedback. The system used Python and LangChain with a Vector Database for semantic search, enabling longitudinal understanding across patient visit histories. This technical architecture reduced the average ticket resolution time for patient advocates by 80%. Implemented automated deployment and model experimentation via GitLab CI/CD.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/EmpathyJournal.jpeg" alt="Empathy Journal Serverless AI Wellness Platform">
+      <div class ="project-right"> 
+        <a href="https://github.com/yourusername/empathy-journal-repo" target="_blank"><h3>Empathy Journal: Serverless AI Wellness Platform</h3></a>
+        <p><strong>Tech Stack:</strong> React, Tailwind CSS, AWS Lambda, API Gateway, Google Gemini, Firebase, Hoppscotch</p>
+        <p>Built a secure, serverless AI journaling application in 48 hours for a hackathon, enabling real-time emotional analysis via the Google Gemini 1.5 Flash API. Developed the backend using AWS Lambda and API Gateway to process entries and return structured insights. Diagnosed and resolved complex CORS issues across the Gemini API and Lambda functions, utilizing Hoppscotch to accelerate iteration. Designed a responsive UI with React and Tailwind CSS, managing real-time data and user-controlled visibility via Firebase Firestore.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/Smark1.jpeg" alt="Smark Stock Sentiment Analysis Platform">
+      <div class ="project-right"> 
+        <a href="https://github.com/yourusername/smark-platform-repo" target="_blank"><h3>Smark: Real-Time Stock Sentiment Analysis Platform</h3></a>
+        <p><strong>Tech Stack:</strong> React, Tailwind CSS, Django, PostgreSQL, Gemini API, Recharts</p>
+        <p>Led frontend development in a 4-person team for a full-stack web app, enabling real-time visualization of 1,000+ stock tickers using React and Recharts. Integrated secure user authentication and persistent watchlist features using Django and PostgreSQL. Built responsive dashboards and personalized stock pages, enhancing user experience and reducing bounce rate by 25%. Leveraged Gemini API to generate LLM-powered sentiment summaries, defining and consuming RESTful APIs and reducing integration time by 40%.</p>
+      </div>
+    </div>
+    
+    <div class="project">
+      <img src="images/DeepWrite.png" alt="DeepWrite Modular Character Processing Service">
+      <div class ="project-right"> 
+        <a href="https://github.com/yourusername/deepwrite-ml-repo" target="_blank"><h3>DeepWrite: Modular Character Processing Service</h3></a>
+        <p><strong>Tech Stack:</strong> Tech Lead | Python, TensorFlow, OpenCV, Joblib</p>
+        <p>Led the development of an end-to-end ML pipeline, training and benchmarking CNN, MLP, and Random Forest models, all achieving 97–99% accuracy. Engineered a robust preprocessing pipeline with OpenCV (denoising, contour alignment) and implemented data augmentation for scalable real-world inference. Built a modular character segmentation service, evaluating models rigorously using confusion matrices and classification reports to guide architecture tuning and improve reliability.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/tribble_console.png" alt="Object-Oriented Business Management Application">
+      <div class ="project-right"> 
+        <a href="https://github.com/jenniferha03/Customer-Project" target="_blank"><h3>Object-Oriented Business Management Application</h3></a>
+        <p><strong>Languages:</strong> C++ (OOP)</p>
+        <p>Engineered a robust, console-based business application using C++ to manage core enterprise functions (Customer, Sales, Order Processing). Applied core OOP principles (Encapsulation, Inheritance, Polymorphism) to design a modular and scalable system architecture. Developed and Optimized CLI interfaces for reporting and secure user login, ensuring data integrity and security through password encryption and strong authentication protocols.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/arduino_circuit.png" alt="Digital Logic Simulation on Embedded Systems">
+      <div class ="project-right"> 
+        <a href="https://github.com/jenniferha03/arduino-circuit" target="_blank"><h3>Digital Logic Simulation on Embedded Systems</h3></a>
+        <p><strong>Tech Used:</strong> Arduino (C-based), Digital Logic</p>
+        <p>Demonstrated a strong foundational knowledge of Computer Architecture and Digital Logic by constructing simulations of critical components using the Arduino platform. Projects included programming a 1-bit Arithmetic Logic Unit (ALU) and a 2-bit Full Adder, showcasing the ability to work with low-level systems and understand the fundamental building blocks of modern computing.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/project3_image.png" alt="Project 3 Image">
+      <div class ="project-right">
+        <a href="https://github.com/jenniferha03/individual-project" target="_blank"><h3>Portfolio Website</h3></a>
+        <p><strong>Languages:</strong> HTML, CSS, JavaScript</p>
+        <p>Developed and deployed this responsive portfolio website from scratch, prioritizing optimal User Experience and accessibility. The site is a comprehensive showcase of expertise, seamlessly blending technical achievements in Computer Science with creative work in Graphic Design. Enhanced functionality by implementing features like a Dark/Light mode toggle and optimizing navigation for a modern, professional presentation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="graphic-design-projects">
+    <h1>Graphic Design Projects</h1>
+    <div class="project1">
+      <img src="images/graphic_project1.png" alt="Graphic Project 1 Image">
+      <div class="project-right">
+        <h3>Logo Design Project</h3>
+        <p>Application: Adobe Illustrator</p>
+      </div>
+    </div>
+
+    <div class="project1">
+      <img src="images/graphic_project2.png" alt="Graphic Project 2 Image">
+      <div class ="project-right">
+        <h3>Product Illustration Project</h3>
+        <p>Application: Adobe Illustrator</p>
+      </div>
+    </div>
+
+    <div class="project1">
+      <img src="images/graphic_project3.png" alt="Graphic Project 3 Image">
+      <div class ="project-right">
+        <h3>Landing Page Project</h3>
+        <p>Application: Adobe Photoshop</p>
+      </div>
+    </div>
+  </section>
+  <script src="theme-toggle.js"></script>
+</body>
+</html>

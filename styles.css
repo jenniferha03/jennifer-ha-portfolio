@@ -6,6 +6,68 @@ Gray: #262626
 White: #F2F2F2
 Gold: #D99E32
 */
+
+/* CSS Variables for Dark/Light Mode */
+:root {
+	--bg-primary: #0D0D0D;
+	--bg-secondary: #262626;
+	--text-primary: #F2F2F2;
+	--text-secondary: #F2F2F27b;
+	--accent: #D99E32;
+	--overlay-dark: rgba(30, 30, 30, 0.4);
+	--overlay-light: rgba(255, 255, 255, 0);
+	--border-color: #ccc;
+}
+
+[data-theme="light"] {
+	--bg-primary: #F2F2F2;
+	--bg-secondary: #E5E5E5;
+	--text-primary: #0D0D0D;
+	--text-secondary: #262626;
+	--accent: #D99E32;
+	--overlay-dark: rgba(255, 255, 255, 0.4);
+	--overlay-light: rgba(0, 0, 0, 0);
+	--border-color: #262626;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+	position: fixed;
+	top: 30px;
+	right: 150px;
+	z-index: 1000;
+	background-color: var(--accent);
+	border: 2px solid var(--accent);
+	border-radius: 50px;
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle svg {
+	width: 20px;
+	height: 20px;
+	fill: var(--bg-primary) !important;
+	transition: transform 0.3s ease;
+}
+
+.theme-toggle svg path {
+	fill: var(--bg-primary) !important;
+}
+
+.theme-toggle:hover svg {
+	transform: rotate(15deg);
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -28,7 +90,7 @@ nav {
 	text-align: center;
 	display: flex;
 	justify-content: center;
-	background-color: #0D0D0D;
+	background-color: var(--bg-primary);
 	width: 100%;
 	position: fixed;
 	z-index: 99;
@@ -47,14 +109,14 @@ nav {
 	width: 110vw;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bolder;
-	background-color: #0D0D0D;
+	background-color: var(--bg-primary);
 }
 .nav li {
 	float: left;
 }
 .nav li a {
 	display: block;
-	color: #F2F2F2;
+	color: var(--text-primary);
 	font-size: larger;
 	font-weight:500;
 	text-align: center;
@@ -62,16 +124,16 @@ nav {
 	text-decoration: none;
 }
 .nav li a:hover:not(.active) {
-	color: #F2F2F2;
+	color: var(--text-primary);
 	text-decoration: underline; /* Use text-decoration instead of border */
     text-decoration-thickness: 2px; /* Adjust the thickness of the underline */
     text-underline-offset: 10px; /* Adjust the distance between text and underline */
 }	
 .nav .active {
-	color: #D99E32;
+	color: var(--accent);
 }
 header {
-	background-color: #0D0D0D;
+	background-color: var(--bg-primary);
     text-align: center;
     padding: 1% 0 0 0;
 }
@@ -87,32 +149,45 @@ header {
 h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 2rem;
-	color: #F2F2F2;
+	color: var(--text-primary);
 	text-align: center;
 	border:2px;
 }
 h2 {
 	font-family: 'Playfair Display', serif;
-    color: #F2F2F27b;
+    color: var(--text-secondary);
 }
 h3 {
 	font-family: 'Playfair Display', sans-serif;
 	font-weight: 700;
-	color: #D99E32;
+	color: var(--accent);
 }
 p{
-	color: #F2F2F2;
+	color: var(--text-primary);
 	font-family: 'Montserrat', sans-serif;
 	line-height: 2em;
 	font-size: 1.1rem;
 }
+.project ul {
+	list-style-type: disc;
+	padding-left: 20px;
+	color: var(--text-primary);
+	font-family: 'Montserrat', sans-serif;
+	line-height: 2em;
+	font-size: 1.1rem;
+}
+.project ul li {
+	margin-bottom: 0.5em;
+}
 body {
-	background-color: #0D0D0D; 
+	background-color: var(--bg-primary); 
     margin: 0;
     padding: 0;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 section {
 	padding: 5% 10%;
+	scroll-margin-top: 100px;
 }
 img{
 	max-width: 100%;
@@ -125,15 +200,16 @@ button {
 	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 600;
-	background-color: #D99E32;
-	color: #0D0D0D;
+	background-color: var(--accent);
+	color: var(--bg-primary);
 	border: none;
 	border-radius: 5px;
 	cursor: pointer; 
+	transition: all 0.3s ease;
 }
 button:hover {
-	color: #0D0D0D;
-	background-color: #F2F2F2;
+	color: var(--bg-primary);
+	background-color: var(--text-primary);
 }
 .project {
     margin-bottom: 20px;
@@ -143,7 +219,7 @@ button:hover {
 	align-items:center;
 	justify-content: space-around;
 	height: 95vh;
-	color: #F2F2F2;
+	color: var(--text-primary);
 	overflow: hidden;
 }
 .portfolio-image {
@@ -188,14 +264,14 @@ button:hover {
     left: 0;
     width: 100%;
     height: 75%;
-    background-color: rgba(30, 30, 30, 0.4);
+    background-color: var(--overlay-dark);
     transition: background-color 0.4s ease; 
 }
 .box:hover::before {
-    background-color: rgba(255, 255, 255, 0); 
+    background-color: var(--overlay-light); 
 }
 .box h3 {
-	color:#F2F2F2;
+	color: var(--text-primary);
 	position: absolute;
 	top: 40%;
 	left: 50%;
@@ -204,38 +280,41 @@ button:hover {
 	font-size: 2em;
 }
 .about-left{
-	color: #D99E32;
+	color: var(--accent);
 	text-align: left;
 }
 .project {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     overflow: hidden;
+    gap: 30px;
 }
 .project img {
     width: 40%;
     height: auto;
     max-width: 100%;
-    margin-right: 20px; /* Adjust the spacing between image and text */
+    flex-shrink: 0;
 }
 .project1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     overflow: hidden;
+    gap: 30px;
 }
 .project1 img {
     width: 30%;
     height: auto;
     max-width: 100%;
-    margin-right: 20px; /* Adjust the spacing between image and text */
+    flex-shrink: 0;
 }
 
 .project-right {
     flex: 1; /* Take up remaining space */
+    min-width: 0; /* Prevents flex item from overflowing */
 }
 
 .project a {
@@ -244,7 +323,7 @@ button:hover {
 
 .project h3 {
     margin-bottom: 10px;
-	color:#D99E32;
+	color: var(--accent);
     font-size: 1.5em;
 }
 
@@ -255,7 +334,8 @@ button:hover {
 
 #travel-gallery, #food-gallery {
 	text-align: center;
-	padding: 20px;
+	padding: 120px 20px 20px 20px;
+	scroll-margin-top: 100px;
 }
 
 .gallery {
@@ -269,7 +349,7 @@ button:hover {
 	width: 300px;
 	height: 200px;
 	object-fit: cover;
-	border: 2px solid #D99E32;
+	border: 2px solid var(--accent);
 	border-radius: 10px;
 	transition: transform 0.2s ease-in-out;
 }
@@ -282,7 +362,7 @@ button:hover {
 	margin-top: 15%;
 	text-align: center;
 	padding: 20px;
-	border: 1px solid #ccc;
+	border: 1px solid var(--border-color);
 	border-radius: 10px;
 }
 
@@ -298,16 +378,17 @@ button:hover {
   }
   
 .touch{
-	color:#D99E32;
+	color: var(--accent);
 	font-size: 4em;
 	letter-spacing:0.05em;
 }
 
 .link{
 	text-decoration: none;
-	color:#F2F2F2;
+	color: var(--text-primary);
+	transition: color 0.3s ease;
 }
 .link:hover{
-	color:#D99E32;
+	color: var(--accent);
 	transform: scale(1.01);
 }
